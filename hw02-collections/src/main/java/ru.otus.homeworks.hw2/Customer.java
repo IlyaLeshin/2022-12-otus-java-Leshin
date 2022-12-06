@@ -1,5 +1,7 @@
 package ru.otus.homeworks.hw2;
 
+import java.util.Objects;
+
 public class Customer implements Comparable<Customer> {
     private final long id;
     private String name;
@@ -52,8 +54,7 @@ public class Customer implements Comparable<Customer> {
 
     @Override
     public int hashCode() {
-
-        return (int) (id ^ (id >>> 32));
+        return Objects.hash(id);
     }
 
     @Override
