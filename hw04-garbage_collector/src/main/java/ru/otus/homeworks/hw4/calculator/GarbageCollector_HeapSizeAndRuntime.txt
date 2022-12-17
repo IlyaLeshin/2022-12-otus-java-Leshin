@@ -1,0 +1,57 @@
+---------------------------------
+2048MB
+spend msec:20018, sec:20
+spend msec:21123, sec:21
+
+<After Correct {Integer -> int} spend msec:4669, sec:4>
+
+---------------------------------
+1024MB
+spend msec:22316, sec:22
+spend msec:20929, sec:20
+
+<After Correct {Integer -> int} spend msec:4720, sec:4>
+
+---------------------------------
+768MB (Optimal)
+spend msec:20715, sec:20
+spend msec:22518, sec:22
+spend msec:21860, sec:21
+
+<After correct {Integer -> int} spend msec:4696, sec:4>
+
+---------------------------------
+728MB
+spend msec:22371, sec:22
+spend msec:22518, sec:22
+
+<After Correct {Integer -> int} spend msec:4718, sec:4>
+
+---------------------------------
+640MB
+spend msec:25325, sec:25
+spend msec:24285, sec:24
+
+<After Correct {Integer -> int} spend msec:5176, sec:5>
+
+---------------------------------
+512MB
+spend msec:24881, sec:24
+spend msec:24489, sec:24
+
+<After Correct {Integer -> int}  spend msec:5407, sec:5>
+
+---------------------------------
+312MB
+spend msec:31224, sec:31
+
+<After Correct {Integer -> int} spend msec:5856, sec:5>
+
+---------------------------------
+256MB
+Execution failed for task ':hw04-garbage_collector:CalcDemo.main()'.
+finished with non-zero exit value 1
+
+<After Correct {Integer -> int} spend msec:7232, sec:7>
+
+---------------------------------
