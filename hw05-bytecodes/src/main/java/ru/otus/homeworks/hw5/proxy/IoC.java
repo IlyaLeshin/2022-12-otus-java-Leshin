@@ -33,7 +33,7 @@ public class IoC {
         private final Object classWithMethods;
         private final Set<String> annotatedMethods = new HashSet<>();
 
-        AnnotationInvocationHandler(Object classWithMethods) {
+        private AnnotationInvocationHandler(Object classWithMethods) {
             this.classWithMethods = classWithMethods;
             for (Method method : classWithMethods.getClass().getDeclaredMethods()) {
                 if (method.isAnnotationPresent(Log.class)) {
@@ -69,7 +69,7 @@ public class IoC {
             }
         }
 
-        private static String methodDescription(Method method) {
+        private String methodDescription(Method method) {
             return method.getName() + " " + Arrays.toString(method.getParameterTypes());
         }
     }
