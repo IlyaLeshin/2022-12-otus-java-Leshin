@@ -1,6 +1,6 @@
-package ru.otus.homeworks.hw5;
+package ru.otus.homeworks.hw5.classes;
 
-public interface ClassWithMethodsInterface {
+public interface ClassWithMethodsInterfaceTwo {
 
     void calculation();
 

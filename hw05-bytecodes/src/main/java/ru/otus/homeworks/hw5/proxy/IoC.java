@@ -1,10 +1,8 @@
 package ru.otus.homeworks.hw5.proxy;
 
-import ru.otus.homeworks.hw5.ClassWithMethodsImpl;
-import ru.otus.homeworks.hw5.ClassWithMethodsInterface;
+
 import ru.otus.homeworks.hw5.annotations.Log;
 
-import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -15,22 +13,30 @@ import java.util.Set;
 
 public class IoC {
 
-    public static ClassWithMethodsInterface createClassWithMethods() {
-        InvocationHandler handler = new AnnotationInvocationHandler(new ClassWithMethodsImpl());
-        return (ClassWithMethodsInterface) Proxy.newProxyInstance(IoC.class.getClassLoader(),
-                new Class<?>[]{ClassWithMethodsInterface.class}, handler);
+    public static Object createClassWithMethods(Class<?> clazzImpl) {
+        Class<?>[] clazzInterface = clazzImpl.getInterfaces();
+        InvocationHandler handler = new AnnotationInvocationHandler(classNewInstance(clazzImpl));
+        return Proxy.newProxyInstance(IoC.class.getClassLoader(), clazzInterface, handler);
     }
 
-    static class AnnotationInvocationHandler implements InvocationHandler {
+    private static Object classNewInstance(Class<?> clazzImpl) {
+        try {
+            return clazzImpl.getConstructor().newInstance();
+        } catch (InvocationTargetException | InstantiationException | IllegalAccessException |
+                 NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-        private final ClassWithMethodsInterface classWithMethods;
+    private static class AnnotationInvocationHandler implements InvocationHandler {
+
+        private final Object classWithMethods;
         private final Set<String> annotatedMethods = new HashSet<>();
-        private final Class<? extends Annotation> annotationClass = Log.class;
 
-        AnnotationInvocationHandler(ClassWithMethodsInterface classWithMethods) {
+        AnnotationInvocationHandler(Object classWithMethods) {
             this.classWithMethods = classWithMethods;
             for (Method method : classWithMethods.getClass().getDeclaredMethods()) {
-                if (method.isAnnotationPresent(annotationClass)) {
+                if (method.isAnnotationPresent(Log.class)) {
                     this.annotatedMethods.add(methodDescription(method));
                 }
             }
@@ -63,7 +69,7 @@ public class IoC {
             }
         }
 
-        private String methodDescription(Method method) {
+        private static String methodDescription(Method method) {
             return method.getName() + " " + Arrays.toString(method.getParameterTypes());
         }
     }

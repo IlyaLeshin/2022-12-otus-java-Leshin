@@ -1,8 +1,8 @@
-package ru.otus.homeworks.hw5;
+package ru.otus.homeworks.hw5.classes;
 
 import ru.otus.homeworks.hw5.annotations.Log;
 
-public class ClassWithMethodsImpl implements ClassWithMethodsInterface {
+public class ClassWithMethodsInterfaceOneImpl implements ClassWithMethodsInterfaceTwo {
 
     @Log
     @Override
