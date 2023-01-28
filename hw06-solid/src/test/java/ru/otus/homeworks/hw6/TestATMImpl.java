@@ -6,7 +6,11 @@ import org.junit.jupiter.api.Test;
 import ru.otus.homeworks.hw6.core.ATM;
 import ru.otus.homeworks.hw6.core.ATMException;
 import ru.otus.homeworks.hw6.core.BanknoteDenomination;
+import ru.otus.homeworks.hw6.core.CashBoxFactory.CashBox;
+import ru.otus.homeworks.hw6.core.CashBoxFactory.CashBoxFactory;
 import ru.otus.homeworks.hw6.impl.ATMImpl;
+import ru.otus.homeworks.hw6.impl.BanknotesStorage;
+import ru.otus.homeworks.hw6.impl.CashBoxesContainer;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -16,7 +20,21 @@ public class TestATMImpl {
     @Test
     @DisplayName("Внесение денежных средств и вывод баланса")
     void putAllCashNominalsAndBalanceTest() {
-        ATM atm = new ATMImpl();
+        CashBox cashBoxOneHundred = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_HUNDRED);
+        CashBox cashBoxTwoHundred = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_HUNDRED);
+        CashBox cashBoxFiveHundred = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_HUNDRED);
+        CashBox cashBoxOneThousand = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_THOUSAND);
+        CashBox cashBoxTwoThousand = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_THOUSAND);
+        CashBox cashBoxFiveThousand = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_THOUSAND);
+        CashBoxesContainer cashBoxesContainer = new CashBoxesContainer(
+                cashBoxOneHundred,
+                cashBoxTwoHundred,
+                cashBoxFiveHundred,
+                cashBoxOneThousand,
+                cashBoxTwoThousand,
+                cashBoxFiveThousand);
+        BanknotesStorage banknotesStorage = new BanknotesStorage(cashBoxesContainer);
+        ATM atm = new ATMImpl(banknotesStorage);
         Map<BanknoteDenomination, Integer> cashPutToATM = new TreeMap<>();
 
         cashPutToATM.put(BanknoteDenomination.ONE_HUNDRED, 1);
@@ -34,7 +52,22 @@ public class TestATMImpl {
     @Test
     @DisplayName("Внесение денежных средств частями и вывод баланса")
     void putPartCashNominalsAndBalanceTest() {
-        ATM atm = new ATMImpl();
+        CashBox cashBoxOneHundred = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_HUNDRED);
+        CashBox cashBoxTwoHundred = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_HUNDRED);
+        CashBox cashBoxFiveHundred = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_HUNDRED);
+        CashBox cashBoxOneThousand = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_THOUSAND);
+        CashBox cashBoxTwoThousand = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_THOUSAND);
+        CashBox cashBoxFiveThousand = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_THOUSAND);
+        CashBoxesContainer cashBoxesContainer = new CashBoxesContainer(
+                cashBoxOneHundred,
+                cashBoxTwoHundred,
+                cashBoxFiveHundred,
+                cashBoxOneThousand,
+                cashBoxTwoThousand,
+                cashBoxFiveThousand);
+        BanknotesStorage banknotesStorage = new BanknotesStorage(cashBoxesContainer);
+        ATM atm = new ATMImpl(banknotesStorage);
+
         Map<BanknoteDenomination, Integer> cashPutToATM_100_500 = new TreeMap<>();
 
         cashPutToATM_100_500.put(BanknoteDenomination.ONE_HUNDRED, 1);
@@ -57,7 +90,21 @@ public class TestATMImpl {
     @Test
     @DisplayName("Внесение денежных средств больше лимита")
     void putCashNominalsMoreLimitTest() {
-        ATM atm = new ATMImpl();
+        CashBox cashBoxOneHundred = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_HUNDRED);
+        CashBox cashBoxTwoHundred = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_HUNDRED);
+        CashBox cashBoxFiveHundred = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_HUNDRED);
+        CashBox cashBoxOneThousand = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_THOUSAND);
+        CashBox cashBoxTwoThousand = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_THOUSAND);
+        CashBox cashBoxFiveThousand = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_THOUSAND);
+        CashBoxesContainer cashBoxesContainer = new CashBoxesContainer(
+                cashBoxOneHundred,
+                cashBoxTwoHundred,
+                cashBoxFiveHundred,
+                cashBoxOneThousand,
+                cashBoxTwoThousand,
+                cashBoxFiveThousand);
+        BanknotesStorage banknotesStorage = new BanknotesStorage(cashBoxesContainer);
+        ATM atm = new ATMImpl(banknotesStorage);
         Map<BanknoteDenomination, Integer> cashPutToATM_Exception = new TreeMap<>();
 
         cashPutToATM_Exception.put(BanknoteDenomination.ONE_HUNDRED, 500);
@@ -67,7 +114,21 @@ public class TestATMImpl {
     @Test
     @DisplayName("Вывод денежных средств и вывод баланса")
     void withdrawCashFromATMTest() {
-        ATM atm = new ATMImpl();
+        CashBox cashBoxOneHundred = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_HUNDRED);
+        CashBox cashBoxTwoHundred = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_HUNDRED);
+        CashBox cashBoxFiveHundred = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_HUNDRED);
+        CashBox cashBoxOneThousand = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_THOUSAND);
+        CashBox cashBoxTwoThousand = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_THOUSAND);
+        CashBox cashBoxFiveThousand = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_THOUSAND);
+        CashBoxesContainer cashBoxesContainer = new CashBoxesContainer(
+                cashBoxOneHundred,
+                cashBoxTwoHundred,
+                cashBoxFiveHundred,
+                cashBoxOneThousand,
+                cashBoxTwoThousand,
+                cashBoxFiveThousand);
+        BanknotesStorage banknotesStorage = new BanknotesStorage(cashBoxesContainer);
+        ATM atm = new ATMImpl(banknotesStorage);
         Map<BanknoteDenomination, Integer> cashPutToATM = new TreeMap<>();
 
         cashPutToATM.put(BanknoteDenomination.ONE_HUNDRED, 10);
@@ -100,7 +161,21 @@ public class TestATMImpl {
     @Test
     @DisplayName("Вывод денежных средств превышающих баланс банкомата")
     void withdrawCashFromATMMoreBalanceTest() {
-        ATM atm = new ATMImpl();
+        CashBox cashBoxOneHundred = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_HUNDRED);
+        CashBox cashBoxTwoHundred = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_HUNDRED);
+        CashBox cashBoxFiveHundred = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_HUNDRED);
+        CashBox cashBoxOneThousand = CashBoxFactory.getCashBox(BanknoteDenomination.ONE_THOUSAND);
+        CashBox cashBoxTwoThousand = CashBoxFactory.getCashBox(BanknoteDenomination.TWO_THOUSAND);
+        CashBox cashBoxFiveThousand = CashBoxFactory.getCashBox(BanknoteDenomination.FIVE_THOUSAND);
+        CashBoxesContainer cashBoxesContainer = new CashBoxesContainer(
+                cashBoxOneHundred,
+                cashBoxTwoHundred,
+                cashBoxFiveHundred,
+                cashBoxOneThousand,
+                cashBoxTwoThousand,
+                cashBoxFiveThousand);
+        BanknotesStorage banknotesStorage = new BanknotesStorage(cashBoxesContainer);
+        ATM atm = new ATMImpl(banknotesStorage);
         Map<BanknoteDenomination, Integer> cashPutToATM = new TreeMap<>();
         cashPutToATM.put(BanknoteDenomination.ONE_HUNDRED, 10);
         atm.putCashInATM(cashPutToATM);
