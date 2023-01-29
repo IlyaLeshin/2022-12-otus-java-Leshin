@@ -47,6 +47,10 @@ public class Message {
                 Optional.of(messageToClone).map(Message::getField13).map(ObjectForMessage::new).orElse(null));
     }
 
+    public Message clone() {
+        return new Message(this);
+    }
+
     public long getId() {
         return id;
     }
