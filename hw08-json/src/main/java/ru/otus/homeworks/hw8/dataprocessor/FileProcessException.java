@@ -1,4 +1,4 @@
-package ru.otus.dataprocessor;
+package ru.otus.homeworks.hw8.dataprocessor;
 
 public class FileProcessException extends RuntimeException {
     public FileProcessException(Exception ex) {

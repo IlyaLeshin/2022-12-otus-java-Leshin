@@ -1,4 +1,4 @@
-package ru.otus.dataprocessor;
+package ru.otus.homeworks.hw8.dataprocessor;
 
 import java.util.Map;
 
