@@ -1,10 +1,10 @@
-package ru.otus.homeworks.hw5;
+package ru.otus;
 
-import ru.otus.homeworks.hw5.classes.ClassWithMethodsInterfaceTwoImpl;
-import ru.otus.homeworks.hw5.classes.ClassWithMethodsInterfaceOneImpl;
-import ru.otus.homeworks.hw5.classes.ClassWithMethodsInterfaceOne;
-import ru.otus.homeworks.hw5.classes.ClassWithMethodsInterfaceTwo;
-import ru.otus.homeworks.hw5.proxy.IoC;
+import ru.otus.classes.ClassWithMethodsInterfaceOne;
+import ru.otus.classes.ClassWithMethodsInterfaceOneImpl;
+import ru.otus.classes.ClassWithMethodsInterfaceTwo;
+import ru.otus.classes.ClassWithMethodsInterfaceTwoImpl;
+import ru.otus.proxy.IoC;
 
 public class Runner {
 

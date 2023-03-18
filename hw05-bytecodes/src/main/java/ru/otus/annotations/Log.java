@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw5.annotations;
+package ru.otus.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

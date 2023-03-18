@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw5.classes;
+package ru.otus.classes;
 
 public interface ClassWithMethodsInterfaceOne {
 
