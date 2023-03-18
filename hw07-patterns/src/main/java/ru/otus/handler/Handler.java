@@ -1,7 +1,7 @@
-package ru.otus.homeworks.hw7.handler;
+package ru.otus.handler;
 
-import ru.otus.homeworks.hw7.model.Message;
-import ru.otus.homeworks.hw7.listener.Listener;
+import ru.otus.model.Message;
+import ru.otus.listener.Listener;
 
 public interface Handler {
     Message handle(Message msg);

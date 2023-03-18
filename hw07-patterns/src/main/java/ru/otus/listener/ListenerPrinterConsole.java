@@ -1,6 +1,6 @@
-package ru.otus.homeworks.hw7.listener;
+package ru.otus.listener;
 
-import ru.otus.homeworks.hw7.model.Message;
+import ru.otus.model.Message;
 
 public class ListenerPrinterConsole implements Listener {
 

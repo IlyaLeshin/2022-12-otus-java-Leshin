@@ -1,12 +1,12 @@
-package ru.otus.homeworks.hw7;
+package ru.otus;
 
-import ru.otus.homeworks.hw7.handler.ComplexProcessor;
-import ru.otus.homeworks.hw7.listener.homework.HistoryListener;
-import ru.otus.homeworks.hw7.model.Message;
-import ru.otus.homeworks.hw7.model.ObjectForMessage;
-import ru.otus.homeworks.hw7.processor.LoggerProcessor;
-import ru.otus.homeworks.hw7.processor.homework.ProcessorSwappingField11AndField12;
-import ru.otus.homeworks.hw7.processor.homework.ProcessorThrowingAnExceptionInAnEvenSecond;
+import ru.otus.handler.ComplexProcessor;
+import ru.otus.listener.homework.HistoryListener;
+import ru.otus.model.Message;
+import ru.otus.model.ObjectForMessage;
+import ru.otus.processor.LoggerProcessor;
+import ru.otus.processor.homework.ProcessorSwappingField11AndField12;
+import ru.otus.processor.homework.ProcessorThrowingAnExceptionInAnEvenSecond;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

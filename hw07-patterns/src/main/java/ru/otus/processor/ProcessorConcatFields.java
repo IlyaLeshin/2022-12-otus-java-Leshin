@@ -1,6 +1,6 @@
-package ru.otus.homeworks.hw7.processor;
+package ru.otus.processor;
 
-import ru.otus.homeworks.hw7.model.Message;
+import ru.otus.model.Message;
 
 public class ProcessorConcatFields implements Processor {
 

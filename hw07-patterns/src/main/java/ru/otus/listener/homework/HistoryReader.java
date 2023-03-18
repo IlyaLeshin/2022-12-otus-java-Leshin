@@ -1,6 +1,6 @@
-package ru.otus.homeworks.hw7.listener.homework;
+package ru.otus.listener.homework;
 
-import ru.otus.homeworks.hw7.model.Message;
+import ru.otus.model.Message;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw7.processor.homework;
+package ru.otus.processor.homework;
 
 import java.time.LocalDateTime;
 
