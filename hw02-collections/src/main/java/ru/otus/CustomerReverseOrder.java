@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw2;
+package ru.otus;
 
 import java.util.Deque;
 import java.util.LinkedList;

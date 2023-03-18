@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw2;
+package ru.otus;
 
 import java.util.Map;
 import java.util.NavigableMap;
