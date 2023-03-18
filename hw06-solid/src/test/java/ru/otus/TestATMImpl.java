@@ -1,16 +1,16 @@
-package ru.otus.homeworks.hw6;
+package ru.otus;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.otus.homeworks.hw6.core.ATM;
-import ru.otus.homeworks.hw6.core.ATMException;
-import ru.otus.homeworks.hw6.core.BanknoteDenomination;
-import ru.otus.homeworks.hw6.core.CashBoxFactory.CashBox;
-import ru.otus.homeworks.hw6.core.CashBoxFactory.CashBoxFactory;
-import ru.otus.homeworks.hw6.impl.ATMImpl;
-import ru.otus.homeworks.hw6.impl.BanknotesStorage;
-import ru.otus.homeworks.hw6.impl.CashBoxesContainer;
+import ru.otus.core.BanknoteDenomination;
+import ru.otus.core.CashBoxFactory.CashBox;
+import ru.otus.core.CashBoxFactory.CashBoxFactory;
+import ru.otus.core.ATM;
+import ru.otus.core.ATMException;
+import ru.otus.impl.ATMImpl;
+import ru.otus.impl.BanknotesStorage;
+import ru.otus.impl.CashBoxesContainer;
 
 import java.util.Map;
 import java.util.TreeMap;

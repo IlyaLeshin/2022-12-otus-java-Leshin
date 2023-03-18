@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw6.core;
+package ru.otus.core;
 
 public enum BanknoteDenomination {
     ONE_HUNDRED(100),

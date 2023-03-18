@@ -1,6 +1,6 @@
-package ru.otus.homeworks.hw6.core.CashBoxFactory;
+package ru.otus.core.CashBoxFactory;
 
-import ru.otus.homeworks.hw6.core.BanknoteDenomination;
+import ru.otus.core.BanknoteDenomination;
 
 public class CashBoxTwoHundred extends CashBoxAbstract {
 

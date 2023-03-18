@@ -1,12 +1,12 @@
-package ru.otus.homeworks.hw6;
+package ru.otus;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.otus.homeworks.hw6.core.ATMException;
-import ru.otus.homeworks.hw6.core.BanknoteDenomination;
-import ru.otus.homeworks.hw6.core.CashBoxFactory.CashBox;
-import ru.otus.homeworks.hw6.core.CashBoxFactory.CashBoxFactory;
+import ru.otus.core.BanknoteDenomination;
+import ru.otus.core.CashBoxFactory.CashBox;
+import ru.otus.core.CashBoxFactory.CashBoxFactory;
+import ru.otus.core.ATMException;
 
 public class TestCashBoxes {
     @Test
