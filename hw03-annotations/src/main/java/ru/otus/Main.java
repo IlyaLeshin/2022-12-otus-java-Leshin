@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw3;
+package ru.otus;
 
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException{

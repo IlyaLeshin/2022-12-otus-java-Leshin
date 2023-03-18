@@ -1,6 +1,8 @@
-package ru.otus.homeworks.hw3;
+package ru.otus;
 
-import ru.otus.homeworks.hw3.annotations.*;
+import ru.otus.annotations.After;
+import ru.otus.annotations.Before;
+import ru.otus.annotations.Test;
 
 public class TestClass {
 
