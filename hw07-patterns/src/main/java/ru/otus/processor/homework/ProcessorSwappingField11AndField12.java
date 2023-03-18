@@ -1,8 +1,8 @@
-package ru.otus.homeworks.hw7.processor.homework;
+package ru.otus.processor.homework;
 
 
-import ru.otus.homeworks.hw7.model.Message;
-import ru.otus.homeworks.hw7.processor.Processor;
+import ru.otus.model.Message;
+import ru.otus.processor.Processor;
 
 public class ProcessorSwappingField11AndField12 implements Processor {
     @Override

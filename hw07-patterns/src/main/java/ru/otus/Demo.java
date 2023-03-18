@@ -1,11 +1,11 @@
-package ru.otus.homeworks.hw7;
+package ru.otus;
 
-import ru.otus.homeworks.hw7.handler.ComplexProcessor;
-import ru.otus.homeworks.hw7.listener.ListenerPrinterConsole;
-import ru.otus.homeworks.hw7.model.Message;
-import ru.otus.homeworks.hw7.processor.LoggerProcessor;
-import ru.otus.homeworks.hw7.processor.ProcessorConcatFields;
-import ru.otus.homeworks.hw7.processor.ProcessorUpperField10;
+import ru.otus.handler.ComplexProcessor;
+import ru.otus.listener.ListenerPrinterConsole;
+import ru.otus.model.Message;
+import ru.otus.processor.LoggerProcessor;
+import ru.otus.processor.ProcessorConcatFields;
+import ru.otus.processor.ProcessorUpperField10;
 
 import java.util.List;
 

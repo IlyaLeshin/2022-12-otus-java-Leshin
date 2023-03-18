@@ -1,7 +1,7 @@
-package ru.otus.homeworks.hw7.listener.homework;
+package ru.otus.listener.homework;
 
-import ru.otus.homeworks.hw7.listener.Listener;
-import ru.otus.homeworks.hw7.model.Message;
+import ru.otus.listener.Listener;
+import ru.otus.model.Message;
 
 import java.util.HashMap;
 import java.util.Map;

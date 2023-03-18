@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw7.model;
+package ru.otus.model;
 
 import java.util.Objects;
 import java.util.Optional;
