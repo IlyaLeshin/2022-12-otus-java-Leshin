@@ -1,8 +1,8 @@
-# otus_java_2022_09_HW
+# 2022-12-otus-java-Leshin
 
 Лёшин Илья  
 Курс Java Professional  
-Группа: 2022-09  
+Группа: 2022-12  
 
 ## Home works
 - [x] hw01-gradle (ДЗ: Проект gradle с модульной структурой)
