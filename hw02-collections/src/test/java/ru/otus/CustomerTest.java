@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw2;
+package ru.otus;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
