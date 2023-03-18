@@ -1,8 +1,8 @@
-package ru.otus.homeworks.hw6.impl;
+package ru.otus.impl;
 
-import ru.otus.homeworks.hw6.core.ATMException;
-import ru.otus.homeworks.hw6.core.BanknoteDenomination;
-import ru.otus.homeworks.hw6.core.CashBoxFactory.CashBox;
+import ru.otus.core.BanknoteDenomination;
+import ru.otus.core.ATMException;
+import ru.otus.core.CashBoxFactory.CashBox;
 
 import java.util.*;
 

@@ -1,7 +1,7 @@
-package ru.otus.homeworks.hw6.core.CashBoxFactory;
+package ru.otus.core.CashBoxFactory;
 
-import ru.otus.homeworks.hw6.core.ATMException;
-import ru.otus.homeworks.hw6.core.BanknoteDenomination;
+import ru.otus.core.BanknoteDenomination;
+import ru.otus.core.ATMException;
 
 public abstract class CashBoxAbstract implements CashBox {
 

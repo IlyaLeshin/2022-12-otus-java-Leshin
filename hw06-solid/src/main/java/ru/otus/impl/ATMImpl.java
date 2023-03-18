@@ -1,7 +1,7 @@
-package ru.otus.homeworks.hw6.impl;
+package ru.otus.impl;
 
-import ru.otus.homeworks.hw6.core.ATM;
-import ru.otus.homeworks.hw6.core.BanknoteDenomination;
+import ru.otus.core.BanknoteDenomination;
+import ru.otus.core.ATM;
 
 
 import java.util.*;

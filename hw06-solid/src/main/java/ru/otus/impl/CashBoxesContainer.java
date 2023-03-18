@@ -1,7 +1,7 @@
-package ru.otus.homeworks.hw6.impl;
+package ru.otus.impl;
 
 
-import ru.otus.homeworks.hw6.core.CashBoxFactory.CashBox;
+import ru.otus.core.CashBoxFactory.CashBox;
 
 import java.util.ArrayList;
 import java.util.Collections;
