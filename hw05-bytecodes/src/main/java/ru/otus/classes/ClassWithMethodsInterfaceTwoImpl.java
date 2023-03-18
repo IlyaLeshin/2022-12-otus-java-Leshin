@@ -1,6 +1,6 @@
-package ru.otus.homeworks.hw5.classes;
+package ru.otus.classes;
 
-import ru.otus.homeworks.hw5.annotations.Log;
+import ru.otus.annotations.Log;
 
 public class ClassWithMethodsInterfaceTwoImpl implements ClassWithMethodsInterfaceOne {
 

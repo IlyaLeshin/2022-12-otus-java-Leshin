@@ -1,7 +1,7 @@
-package ru.otus.homeworks.hw5.proxy;
+package ru.otus.proxy;
 
 
-import ru.otus.homeworks.hw5.annotations.Log;
+import ru.otus.annotations.Log;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
