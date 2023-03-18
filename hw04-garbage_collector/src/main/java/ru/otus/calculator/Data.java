@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw4.calculator;
+package ru.otus.calculator;
 
 public class Data {
     private final int value;
