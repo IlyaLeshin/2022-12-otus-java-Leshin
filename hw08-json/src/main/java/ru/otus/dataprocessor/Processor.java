@@ -1,6 +1,6 @@
-package ru.otus.homeworks.hw8.dataprocessor;
+package ru.otus.dataprocessor;
 
-import ru.otus.homeworks.hw8.model.Measurement;
+import ru.otus.model.Measurement;
 
 import java.util.List;
 import java.util.Map;

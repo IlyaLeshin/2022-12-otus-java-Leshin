@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw8.model;
+package ru.otus.model;
 
 
 //Допустим, этот класс библиотечный, его нельзя менять
