@@ -1,4 +1,4 @@
-package ru.otus.homeworks.hw8.dataprocessor;
+package ru.otus.dataprocessor;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
