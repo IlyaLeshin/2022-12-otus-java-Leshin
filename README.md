@@ -14,4 +14,4 @@
 - [x] hw07-patterns (ДЗ: Обработчик сообщений)
 - [x] hw08-json (ДЗ: Обработчик json-ов)
 
-- [] hw10-jpql (ДЗ: Использование Hibernate)
+- [x] hw10-jpql (ДЗ: Использование Hibernate)
