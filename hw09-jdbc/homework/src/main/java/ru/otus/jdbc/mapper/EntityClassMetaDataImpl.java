@@ -6,6 +6,7 @@ import ru.otus.crm.model.annotations.Id;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -67,9 +68,8 @@ public class EntityClassMetaDataImpl<T> implements EntityClassMetaData<T> {
     @Override
     public List<Field> getFieldsWithoutId() {
         if (fieldsWithoutId == null) {
-            fieldsWithoutId = getAllFields().stream()
-                    .filter(f -> !(f.isAnnotationPresent(Id.class)))
-                    .toList();
+            fieldsWithoutId = new ArrayList<>(getAllFields());
+            fieldsWithoutId.remove(getIdField());
         }
         return fieldsWithoutId;
     }
