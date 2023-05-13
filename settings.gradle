@@ -6,9 +6,9 @@ include 'hw04-garbage_collector'
 include 'hw05-bytecodes'
 include 'hw06-solid'
 include 'hw07-patterns'
-include "hw08-json"
+include 'hw08-json'
 
-
-
+include 'hw09-jdbc:demo'
+include 'hw09-jdbc:homework'
 
 include 'hw10-jpql:homework'
