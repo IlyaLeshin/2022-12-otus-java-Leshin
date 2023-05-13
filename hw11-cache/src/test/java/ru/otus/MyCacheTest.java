@@ -10,6 +10,7 @@ import ru.otus.crm.model.Manager;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@DisplayName("Проверка MyCache")
 public class MyCacheTest {
 
     @Test

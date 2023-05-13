@@ -66,7 +66,7 @@ class DbServiceWithCacheTest {
     }
 
     @Test
-    @DisplayName("(DbServiceClient) Проверка, что скорость чтения с использованием кеширования выше чем без него")
+    @DisplayName("(DbServiceClient) Проверка, что скорость чтения с использованием кэширования выше чем без него")
     void testDbServiceClientWithCacheFasterThenWithoutCache() {
         long startTime;
         long timerGettingClientFromDb;
@@ -80,19 +80,19 @@ class DbServiceWithCacheTest {
         startTime = System.currentTimeMillis();
         listClientWithoutCache = gettingClients(clientIds, dbServiceClient);
         timerGettingClientFromDb = System.currentTimeMillis() - startTime;
-        log.info("Запись и чтение клиента без кеширования: {} мс.", timerGettingClientFromDb);
+        log.info("Чтение клиента без кэширования: {} мс.", timerGettingClientFromDb);
 
         startTime = System.currentTimeMillis();
         listClientWithCache = gettingClients(clientIds, dbServiceClientWithCache);
         timerGettingClientFromDbWithCache = System.currentTimeMillis() - startTime;
-        log.info("Запись и чтение клиента с кешированием: {} мс.", timerGettingClientFromDbWithCache);
+        log.info("Чтение клиента с кэшированием: {} мс.", timerGettingClientFromDbWithCache);
 
         assertEquals(listClientWithCache, listClientWithoutCache);
         assertTrue(timerGettingClientFromDbWithCache < timerGettingClientFromDb);
     }
 
     @Test
-    @DisplayName("(DbServiceManager) Проверка, что скорость чтения с использованием кеширования выше чем без него ")
+    @DisplayName("(DbServiceManager) Проверка, что скорость чтения с использованием кэширования выше чем без него ")
     void testDbServiceManagerWithCacheFasterThenWithout() {
         long startTime;
         long addAndGetManagerFromDbTime;
@@ -106,12 +106,12 @@ class DbServiceWithCacheTest {
         startTime = System.currentTimeMillis();
         listManagerWithoutCache = gettingManagers(managerIds, dbServiceManager);
         addAndGetManagerFromDbTime = System.currentTimeMillis() - startTime;
-        log.info("Запись и чтение менеджера без кеширования: {} мс.", addAndGetManagerFromDbTime);
+        log.info("Чтение менеджера без кэширования: {} мс.", addAndGetManagerFromDbTime);
 
         startTime = System.currentTimeMillis();
         listManagerWithCache = gettingManagers(managerIds, dbServiceManagerWithCache);
         addAndGetManagerFromDbWithCacheTime = System.currentTimeMillis() - startTime;
-        log.info("Запись и чтение менеджера с кешированием: {} мс.", addAndGetManagerFromDbWithCacheTime);
+        log.info("Чтение менеджера с кэшированием: {} мс.", addAndGetManagerFromDbWithCacheTime);
 
         assertEquals(listManagerWithCache, listManagerWithoutCache);
         assertTrue(addAndGetManagerFromDbWithCacheTime < addAndGetManagerFromDbTime);
