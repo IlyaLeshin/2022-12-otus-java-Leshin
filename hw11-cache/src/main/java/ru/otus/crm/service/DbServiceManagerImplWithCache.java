@@ -19,12 +19,11 @@ public class DbServiceManagerImplWithCache implements DBServiceManager {
     @Override
     public Manager saveManager(Manager manager) {
         return addToCache(serviceManager.saveManager(manager));
-
     }
 
     @Override
     public Optional<Manager> getManager(long no) {
-        String stringId = String.valueOf(no);
+        String stringId = getKeyForCache(no);
         return Optional.ofNullable(cache.get(stringId))
                 .or(() -> {
                             Optional<Manager> getManagerByNo = serviceManager.getManager(no);
@@ -40,9 +39,13 @@ public class DbServiceManagerImplWithCache implements DBServiceManager {
     }
 
     private Manager addToCache(Manager manager) {
-        Manager ClonedManager = manager.clone();
-        String stringId = String.valueOf(ClonedManager.getNo());
-        cache.put(stringId, ClonedManager);
-        return ClonedManager;
+        Manager clonedManager = manager.clone();
+        String stringId = String.valueOf(clonedManager.getNo());
+        cache.put(stringId, clonedManager);
+        return clonedManager;
+    }
+
+    private String getKeyForCache(long no){
+        return String.valueOf(no);
     }
 }

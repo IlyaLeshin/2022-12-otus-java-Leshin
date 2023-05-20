@@ -23,7 +23,7 @@ public class DbServiceClientImplWithCache implements DBServiceClient {
 
     @Override
     public Optional<Client> getClient(long id) {
-        String stringId = String.valueOf(id);
+        String stringId = getKeyForCache(id);
         return Optional.ofNullable(cache.get(stringId)).
                 or(() -> {
                             Optional<Client> getClientById = serviceClient.getClient(id);
@@ -39,9 +39,12 @@ public class DbServiceClientImplWithCache implements DBServiceClient {
     }
 
     private Client addToCache(Client client) {
-        Client ClonedClient = client.clone();
-        String stringId = String.valueOf(ClonedClient.getId());
-        cache.put(stringId, ClonedClient);
-        return ClonedClient;
+        Client clonedClient = client.clone();
+        String stringId = String.valueOf(clonedClient.getId());
+        cache.put(stringId, clonedClient);
+        return clonedClient;
+    }
+    private String getKeyForCache(long id){
+        return String.valueOf(id);
     }
 }
