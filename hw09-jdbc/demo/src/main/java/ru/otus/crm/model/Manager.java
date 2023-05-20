@@ -2,6 +2,8 @@ package ru.otus.crm.model;
 
 import ru.otus.crm.model.annotations.Id;
 
+import java.util.Objects;
+
 public class Manager {
     @Id
     private Long no;
@@ -51,5 +53,21 @@ public class Manager {
                 "no=" + no +
                 ", label='" + label + '\'' +
                 '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Manager manager = (Manager) o;
+        return Objects.equals(no, manager.getNo()) && Objects.equals(label, manager.getLabel() ) & Objects.equals(param1, manager.getParam1() );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(no);
+    }
+
+    public Manager clone() {
+        return new Manager(this.no, this.label, this.param1);
     }
 }

@@ -15,3 +15,4 @@
 - [x] hw08-json (ДЗ: Обработчик json-ов)
 - [x] hw09-jdbc (ДЗ: Самодельный ORM)
 - [x] hw10-jpql (ДЗ: Использование Hibernate)
+- [] hw11-cache (ДЗ: Свой cache engine)
