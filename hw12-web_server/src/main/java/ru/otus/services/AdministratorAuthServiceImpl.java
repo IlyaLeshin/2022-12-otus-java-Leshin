@@ -16,5 +16,4 @@ public class AdministratorAuthServiceImpl implements AuthService {
                 .map(user -> user.password().equals(password))
                 .orElse(false);
     }
-
 }

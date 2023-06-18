@@ -1,6 +1,5 @@
 package ru.otus.servlet;
 
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,7 +18,6 @@ public class LoginServlet extends HttpServlet {
     private static final String PARAM_PASSWORD = "password";
     private static final int MAX_INACTIVE_INTERVAL = 30;
     private static final String LOGIN_PAGE_TEMPLATE = "login.html";
-
 
     private final TemplateProcessor templateProcessor;
     private final AuthService authService;
@@ -48,7 +46,5 @@ public class LoginServlet extends HttpServlet {
         } else {
             response.setStatus(SC_UNAUTHORIZED);
         }
-
     }
-
 }

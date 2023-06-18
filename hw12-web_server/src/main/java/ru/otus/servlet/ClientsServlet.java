@@ -69,6 +69,5 @@ public class ClientsServlet extends HttpServlet {
             dbServiceClient.saveClient(client);
         }
         response.sendRedirect("clients");
-
     }
 }

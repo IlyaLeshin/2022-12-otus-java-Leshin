@@ -24,12 +24,10 @@ public class WebServerImpl implements WebServer {
 
     private static final String START_PAGE_NAME = "index.html";
     private static final String COMMON_RESOURCES_DIR = "static";
-
     private final DBServiceClient dbServiceClient;
     protected final TemplateProcessor templateProcessor;
     private final Server server;
     private final AuthService authService;
-
     private final Gson gson;
 
     public WebServerImpl(int port,

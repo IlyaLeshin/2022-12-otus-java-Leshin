@@ -21,16 +21,14 @@ import ru.otus.services.AuthService;
 import ru.otus.services.AdministratorAuthServiceImpl;
 
 /*
-    Полезные для демо ссылки
-
     // Стартовая страница
     http://localhost:8080
 
-    // Страница пользователей
+    // Страница для работы с клиентами
     http://localhost:8080/clients
 
     // REST сервис
-    http://localhost:8080/api/client/3
+    http://localhost:8080/api/client/1 после добавления в нового клиента
 */
 public class WebServerMain {
     private static final int WEB_SERVER_PORT = 8080;

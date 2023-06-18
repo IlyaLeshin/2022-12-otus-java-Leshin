@@ -10,7 +10,7 @@ public class InMemoryAdministratorDao implements AdministratorDao {
 
     public InMemoryAdministratorDao() {
         administrators = new HashMap<>();
-        administrators.put(1L, new Administrator(1L ,"admin", "admin"));
+        administrators.put(1L, new Administrator(1L, "admin", "admin"));
     }
 
     @Override

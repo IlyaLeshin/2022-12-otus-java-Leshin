@@ -6,13 +6,10 @@
             const clientIdTextBox = document.getElementById('clientIdTextBox');
             const clientDataContainer = document.getElementById('clientDataContainer');
             const id = clientIdTextBox.value;
-            //fetch('api/client?id=' + id)
             fetch('api/client/' + id)
                 .then(response => response.json())
                 .then(client => clientDataContainer.innerHTML = JSON.stringify(client));
         }
-
-
     </script>
 </head>
 
@@ -42,17 +39,12 @@
     </thead>
     <#list clients as client>
     <tbody>
-
     <tr>
         <td>${client.id}</td>
         <td>${client.name}</td>
-
         <td>${client.address}</td>
-
         <td>${client.phones}</td>
-
     </tr>
-
     </tbody>
 </#list>
 </table>

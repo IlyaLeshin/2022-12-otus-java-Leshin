@@ -25,7 +25,7 @@ public class ClientsApiServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Client client = dbServiceClient.getClient(extractIdFromRequest(request)).orElse(null);
-         response.setContentType("application/json;charset=UTF-8");
+        response.setContentType("application/json;charset=UTF-8");
         ServletOutputStream out = response.getOutputStream();
         if (client != null) {
             out.print(gson.toJson(client.toString()));
@@ -37,5 +37,4 @@ public class ClientsApiServlet extends HttpServlet {
         String id = (path.length > 1) ? path[ID_PATH_PARAM_POSITION] : String.valueOf(-1);
         return Long.parseLong(id);
     }
-
 }
