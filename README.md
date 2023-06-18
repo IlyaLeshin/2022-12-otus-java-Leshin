@@ -16,4 +16,4 @@
 - [x] hw09-jdbc (ДЗ: Самодельный ORM)
 - [x] hw10-jpql (ДЗ: Использование Hibernate)
 - [x] hw11-cache (ДЗ: Свой cache engine)
-- [ ] hw12-web_server (ДЗ: Веб сервер)
+- [x] hw12-web_server (ДЗ: Веб сервер)

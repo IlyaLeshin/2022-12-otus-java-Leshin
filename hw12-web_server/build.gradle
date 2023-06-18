@@ -2,12 +2,17 @@ plugins {
     id 'java'
 }
 
-sourceCompatibility = JavaVersion.VERSION_13
-targetCompatibility = JavaVersion.VERSION_13
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
 dependencies {
+    implementation project(':hw10-jpql:homework')
+
     implementation("ch.qos.logback:logback-classic")
+    implementation("org.hibernate.orm:hibernate-core")
+    implementation('org.flywaydb:flyway-core')
     implementation("com.google.code.gson:gson:${Versions.gson}")
+    implementation("org.postgresql:postgresql")
 
     implementation("org.eclipse.jetty:jetty-servlet:${Versions.jetty}")
     implementation("org.eclipse.jetty:jetty-server:${Versions.jetty}")
@@ -22,6 +27,9 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-params")
     testImplementation("org.assertj:assertj-core")
     testImplementation("org.mockito:mockito-junit-jupiter")
+
+    testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.testcontainers:postgresql")
 }
 
 test {
@@ -30,7 +38,6 @@ test {
         events "passed", "skipped", "failed"
     }
 }
-
 
 compileJava.options.encoding = 'UTF-8'
 

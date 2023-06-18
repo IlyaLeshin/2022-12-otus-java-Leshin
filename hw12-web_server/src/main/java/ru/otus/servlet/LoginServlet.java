@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import ru.otus.services.TemplateProcessor;
-import ru.otus.services.UserAuthService;
+import ru.otus.services.AuthService;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -22,15 +22,15 @@ public class LoginServlet extends HttpServlet {
 
 
     private final TemplateProcessor templateProcessor;
-    private final UserAuthService userAuthService;
+    private final AuthService authService;
 
-    public LoginServlet(TemplateProcessor templateProcessor, UserAuthService userAuthService) {
-        this.userAuthService = userAuthService;
+    public LoginServlet(TemplateProcessor templateProcessor, AuthService authService) {
+        this.authService = authService;
         this.templateProcessor = templateProcessor;
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         response.getWriter().println(templateProcessor.getPage(LOGIN_PAGE_TEMPLATE, Collections.emptyMap()));
     }
@@ -41,10 +41,10 @@ public class LoginServlet extends HttpServlet {
         String name = request.getParameter(PARAM_LOGIN);
         String password = request.getParameter(PARAM_PASSWORD);
 
-        if (userAuthService.authenticate(name, password)) {
+        if (authService.authenticate(name, password)) {
             HttpSession session = request.getSession();
             session.setMaxInactiveInterval(MAX_INACTIVE_INTERVAL);
-            response.sendRedirect("/users");
+            response.sendRedirect("/clients");
         } else {
             response.setStatus(SC_UNAUTHORIZED);
         }
