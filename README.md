@@ -16,3 +16,5 @@
 - [x] hw09-jdbc (ДЗ: Самодельный ORM)
 - [x] hw10-jpql (ДЗ: Использование Hibernate)
 - [] hw11-cache (ДЗ: Свой cache engine)
+
+- [] hw13-di (ДЗ: Собственный IoC контейнер)
