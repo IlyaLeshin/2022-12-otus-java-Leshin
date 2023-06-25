@@ -16,5 +16,4 @@ include 'hw10-jpql:homework'
 include 'hw11-cache'
 include 'hw12-web_server'
 
-include 'hw14-springDataJdbc:jpql'
-include 'hw14-springDataJdbc:web'
+include 'hw14-springDataJdbc'
