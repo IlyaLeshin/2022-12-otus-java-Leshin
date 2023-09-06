@@ -1,13 +1,9 @@
 package ru.otus.controllers;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import ru.otus.dto.ClientDTO;
 import ru.otus.services.ClientService;
-
-import java.util.List;
-
 
 @RestController
 public class ClientRestController {
@@ -27,5 +23,4 @@ public class ClientRestController {
     public ClientDTO saveClient(@RequestBody ClientDTO clientDTO) {
         return clientService.saveClient(clientDTO);
     }
-
 }

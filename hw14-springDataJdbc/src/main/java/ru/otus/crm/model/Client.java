@@ -2,15 +2,13 @@ package ru.otus.crm.model;
 
 import jakarta.annotation.Nonnull;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceCreator;
 import org.springframework.data.relational.core.mapping.MappedCollection;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.util.List;
+import java.util.Set;
 
 @Getter
 @ToString
@@ -28,20 +26,18 @@ public class Client {
     private final Address address;
 
     @Nonnull
-    @MappedCollection(idColumn = "client_id", keyColumn = "id")
-    private final List<Phone> phones;
+    @MappedCollection(idColumn = "client_id")
+    private final Set<Phone> phones;
 
-    public Client(String name, Address address, List<Phone> phones) {
+    public Client(String name, Address address, Set<Phone> phones) {
         this(null, name, address, phones);
     }
 
     @PersistenceCreator
-    public Client(Long id, String name, Address address, List<Phone> phones) {
+    public Client(Long id, String name, Address address, Set<Phone> phones) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.phones = phones;
     }
-
-
 }

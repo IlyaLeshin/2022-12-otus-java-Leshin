@@ -2,8 +2,8 @@ package ru.otus.crm.service;
 
 import ru.otus.crm.model.Client;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public interface DBServiceClient {
 
@@ -11,5 +11,5 @@ public interface DBServiceClient {
 
     Optional<Client> getClient(long id);
 
-    List<Client> findAll();
+    Set<Client> findAll();
 }

@@ -96,18 +96,13 @@
 <a th:href="@{/client/create}" href="clientCreate.html">New client</a>
 
 <br/><br/>
-<h3>Тест View без контроллера:</h3>
-<a th:href="@{/no-handler-view}">Перейти на View без контроллера</a>
-
-
-<br/><br/>
 <h3>API:</h3>
 
 <br/>
 <br/>
 
 <div class="controls-container">
-    <input type="text" id="clientIdTextBox" value="3" placeholder="Введите id клиента">
+    <input type="text" id="clientIdTextBox" value="1" placeholder="Введите id клиента">
     <button onclick="getClient('api/client/', 'clientIdTextBox')">Получить клиента по id</button>
 </div>
 

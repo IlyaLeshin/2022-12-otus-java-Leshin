@@ -1,11 +1,11 @@
 package ru.otus.crm.model;
 
-
 import jakarta.annotation.Nonnull;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.PersistenceCreator;
 import org.springframework.data.relational.core.mapping.Table;
+
 @Getter
 @ToString
 @Table(name = "phone")
@@ -16,7 +16,6 @@ public class Phone {
 
     @Nonnull
     private final String number;
-
 
     private final Long clientId;
 

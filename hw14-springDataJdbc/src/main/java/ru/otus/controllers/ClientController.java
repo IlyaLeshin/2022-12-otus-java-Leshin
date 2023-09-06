@@ -40,5 +40,4 @@ public class ClientController {
         clientService.saveClient(clientDTO);
         return new RedirectView("/", true);
     }
-
 }

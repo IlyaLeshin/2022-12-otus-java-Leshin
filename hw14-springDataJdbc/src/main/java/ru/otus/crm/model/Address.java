@@ -18,8 +18,6 @@ public class Address {
     @Nonnull
     private final String street;
 
-
-
     @PersistenceCreator
     public Address(Long id, String street) {
         this.id = id;

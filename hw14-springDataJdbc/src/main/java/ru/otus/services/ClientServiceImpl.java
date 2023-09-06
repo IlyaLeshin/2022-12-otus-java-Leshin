@@ -10,6 +10,7 @@ import ru.otus.dto.ClientDTO;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -28,7 +29,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public ClientDTO getClient(long id) {
-        Client client = dbServiceClient.getClient(id).orElseThrow(RuntimeException::new);
+        Client client = dbServiceClient.getClient(id).orElseThrow(() -> new RuntimeException("client not found"));
 
         return new ClientDTO(client);
     }
@@ -43,18 +44,17 @@ public class ClientServiceImpl implements ClientService {
                 .toList();
     }
 
-
     private ClientDTO convertClientToDto(Client client) {
         return new ClientDTO(client);
     }
 
 
     private Client convertDtoToClient(ClientDTO clientDto) {
-               String name = clientDto.getName();
+        String name = clientDto.getName();
         Address address = new Address(null, clientDto.getAddress());
-        List<Phone> phones = Arrays.stream(clientDto.getPhones().split(";"))
+        Set<Phone> phones = Arrays.stream(clientDto.getPhones().split(";"))
                 .map(phone -> new Phone(null, phone, null))
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
 
         return new Client(name, address, phones);
     }

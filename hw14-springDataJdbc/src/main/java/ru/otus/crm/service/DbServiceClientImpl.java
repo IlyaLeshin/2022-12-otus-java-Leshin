@@ -7,8 +7,9 @@ import ru.otus.crm.model.Client;
 import ru.otus.crm.repository.ClientRepository;
 import ru.otus.sessionmanager.TransactionManager;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+
 @Service
 public class DbServiceClientImpl implements DBServiceClient {
     private static final Logger log = LoggerFactory.getLogger(DbServiceClientImpl.class);
@@ -40,7 +41,7 @@ public class DbServiceClientImpl implements DBServiceClient {
     }
 
     @Override
-    public List<Client> findAll() {
+    public Set<Client> findAll() {
         return transactionManager.doInReadOnlyTransaction(() -> {
             var clientList = clientRepository.findAll();
             log.info("clientList:{}", clientList);
