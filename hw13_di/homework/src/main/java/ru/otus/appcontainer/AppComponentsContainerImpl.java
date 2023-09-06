@@ -19,7 +19,6 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
 
     public AppComponentsContainerImpl(Class<?>... initialConfigClasses) {
         Arrays.stream(initialConfigClasses)
-                .peek(this::checkConfigClass)
                 .sorted(Comparator.comparingInt(configClass -> configClass.getAnnotation(AppComponentsContainerConfig.class).order()))
                 .forEachOrdered(this::processConfig);
     }
@@ -72,7 +71,7 @@ public class AppComponentsContainerImpl implements AppComponentsContainer {
                 .toList();
         if (components.size() == 1) {
             return (C) components.get(0);
-        } else if (components.size() == 0) {
+        } else if (components.isEmpty()) {
             throw new RuntimeException(String.format("Компонент не найден в классе %s", componentClass.getName()));
         } else
             throw new RuntimeException(String.format("Дублирование компонентов в классе %s", componentClass.getName()));
