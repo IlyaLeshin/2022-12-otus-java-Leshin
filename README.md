@@ -17,3 +17,5 @@
 - [x] hw10-jpql (ДЗ: Использование Hibernate)
 - [x] hw11-cache (ДЗ: Свой cache engine)
 - [x] hw12-web_server (ДЗ: Веб сервер)
+- [x] hw13-di (ДЗ: Собственный IoC контейнер)
+- [x] hw14-springDataJdbc (ДЗ: Веб-приложение на Spring Boot)
