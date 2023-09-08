@@ -20,4 +20,4 @@
 - [x] hw13-di (ДЗ: Собственный IoC контейнер)
 - [x] hw14-springDataJdbc (ДЗ: Веб-приложение на Spring Boot)
 
-- [ ] hw16-queue (ДЗ: Queues)
+- [x] hw16-queue (ДЗ: Queues)
