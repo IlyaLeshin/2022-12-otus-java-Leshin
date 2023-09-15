@@ -19,3 +19,6 @@ include 'hw12-web_server'
 include 'hw13_di:homework'
 
 include 'hw14-springDataJdbc'
+
+include 'hw18-webflux:client-service'
+include 'hw18-webflux:datastore-service'
