@@ -19,4 +19,4 @@
 - [x] hw12-web_server (ДЗ: Веб сервер)
 - [x] hw13-di (ДЗ: Собственный IoC контейнер)
 - [x] hw14-springDataJdbc (ДЗ: Веб-приложение на Spring Boot)
-- [] hw18-webflux (ДЗ: Комната 1408)
+- [x] hw18-webflux (ДЗ: Комната 1408)

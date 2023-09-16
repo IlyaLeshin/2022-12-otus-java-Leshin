@@ -22,7 +22,7 @@ public class MessageController {
     private static final Logger logger = LoggerFactory.getLogger(MessageController.class);
 
     private static final String TOPIC_TEMPLATE = "/topic/response.";
-    private static final String SPECIAL_ROOM_ID = "1408";
+    private static final long SPECIAL_ROOM_ID = 1408L;
     private final WebClient datastoreClient;
     private final SimpMessagingTemplate template;
 
@@ -33,7 +33,7 @@ public class MessageController {
 
     @MessageMapping("/message.{roomId}")
     public void getMessage(@DestinationVariable String roomId, Message message) {
-        if (roomId.equals(SPECIAL_ROOM_ID)) {
+        if (roomId.equals(String.valueOf(SPECIAL_ROOM_ID))) {
             logger.info("Can't send a message from the room {}", SPECIAL_ROOM_ID);
         } else {
             logger.info("get message:{}, roomId:{}", message, roomId);
@@ -54,7 +54,7 @@ public class MessageController {
             throw new ChatException("Can not get simpDestination header");
         }
         var roomId = parseRoomId(simpDestination);
-        if (roomId == Long.parseLong(SPECIAL_ROOM_ID)) {
+        if (roomId == SPECIAL_ROOM_ID) {
             getMessagesFromAllRooms()
                     .doOnError(ex -> logger.error("getting messages for roomId:{} failed", roomId, ex))
                     .subscribe(message -> template.convertAndSend(simpDestination, message));
