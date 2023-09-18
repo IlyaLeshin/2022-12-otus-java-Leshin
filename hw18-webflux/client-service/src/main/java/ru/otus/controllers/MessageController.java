@@ -110,7 +110,7 @@ public class MessageController {
         template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, thisRoomId),
                 new Message(messageForSend));
 
-        template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, SPECIAL_ROOM_ID),
+        template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, specialRoomId),
                 new Message(messageForSend));
     }
 }
