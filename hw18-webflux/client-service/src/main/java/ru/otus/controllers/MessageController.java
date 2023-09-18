@@ -40,8 +40,9 @@ public class MessageController {
             saveMessage(roomId, message)
                     .subscribe(msgId -> logger.info("message send id:{}", msgId));
 
-            template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, roomId),
-                    new Message(HtmlUtils.htmlEscape(message.messageStr())));
+            String messageForSend = HtmlUtils.htmlEscape(message.messageStr());
+
+            convertAndSendMessageToThisAndSpecialRoom(messageForSend, roomId, SPECIAL_ROOM_ID);
         }
     }
 
@@ -103,5 +104,13 @@ public class MessageController {
                         return response.createException().flatMapMany(Mono::error);
                     }
                 });
+    }
+
+    private void convertAndSendMessageToThisAndSpecialRoom(String messageForSend, String thisRoomId, long specialRoomId) {
+        template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, thisRoomId),
+                new Message(messageForSend));
+
+        template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, SPECIAL_ROOM_ID),
+                new Message(messageForSend));
     }
 }
