@@ -42,7 +42,11 @@ public class MessageController {
 
             String messageForSend = HtmlUtils.htmlEscape(message.messageStr());
 
-            convertAndSendMessageToThisAndSpecialRoom(messageForSend, roomId, SPECIAL_ROOM_ID);
+            template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, roomId),
+                    new Message(messageForSend));
+
+            template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, SPECIAL_ROOM_ID),
+                    new Message(messageForSend));
         }
     }
 
@@ -104,13 +108,5 @@ public class MessageController {
                         return response.createException().flatMapMany(Mono::error);
                     }
                 });
-    }
-
-    private void convertAndSendMessageToThisAndSpecialRoom(String messageForSend, String thisRoomId, long specialRoomId) {
-        template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, thisRoomId),
-                new Message(messageForSend));
-
-        template.convertAndSend(String.format("%s%s", TOPIC_TEMPLATE, specialRoomId),
-                new Message(messageForSend));
     }
 }
