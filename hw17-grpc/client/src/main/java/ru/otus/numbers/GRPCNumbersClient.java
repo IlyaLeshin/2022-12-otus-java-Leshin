@@ -8,10 +8,6 @@ import ru.otus.protobuf.generated.Request;
 import ru.otus.numbers.service.RemoteClientStreamObserver;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 
 public class GRPCNumbersClient {
@@ -42,27 +38,29 @@ public class GRPCNumbersClient {
     private void action(NumbersServiceGrpc.NumbersServiceStub asyncClient, CountDownLatch latch) {
 
         var request = makeRequest();
-        ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
 
         var remoteClientStreamObserver = new RemoteClientStreamObserver(latch);
         asyncClient.getNumber(request, remoteClientStreamObserver);
 
-        var idx = new AtomicInteger(1);
-        Runnable task = () -> {
-            idx.getAndIncrement();
+        for (int i = 0; i < NUMBER_SEQUENCE_LIMIT; i++) {
             var currentValue = getNextValue(remoteClientStreamObserver);
             log.info("currentValue: {}", currentValue);
-            if (idx.get() == NUMBER_SEQUENCE_LIMIT) {
-                executor.shutdown();
-                log.info("the number sequence has ended");
-            }
-        };
-        executor.scheduleAtFixedRate(task, 0, 1, TimeUnit.SECONDS);
+            sleep();
+        }
+        log.info("the number sequence has ended");
     }
 
     private long getNextValue(RemoteClientStreamObserver remoteClientStreamObserver) {
         value = value + remoteClientStreamObserver.getCurrentValueAndReset() + 1;
         return value;
+    }
+
+    private void sleep() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static Request makeRequest() {
