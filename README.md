@@ -19,4 +19,7 @@
 - [x] hw12-web_server (ДЗ: Веб сервер)
 - [x] hw13-di (ДЗ: Собственный IoC контейнер)
 - [x] hw14-springDataJdbc (ДЗ: Веб-приложение на Spring Boot)
+
+- [x] hw16-queue (ДЗ: Queues)
+- [x] hw17-grpc (ДЗ: gRPC клиент-серверное приложение или "Убить босса")
 - [x] hw18-webflux (ДЗ: Комната 1408)
