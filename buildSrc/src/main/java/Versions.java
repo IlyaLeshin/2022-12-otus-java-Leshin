@@ -11,7 +11,6 @@ public interface Versions {
 
     String reflections = "0.10.2";
 
-
     String errorProneAnnotations = "2.11.0";
     String tomcatAnnotationsApi = "6.0.53";
     String grpc = "1.44.1";
@@ -22,7 +21,6 @@ public interface Versions {
     String springDocOpenapiUi = "2.0.2";
     String jsr305 = "3.0.2";
 
-    String grpc = "1.44.1";
     String wiremock = "3.0.0-beta-2";
     String r2dbcPostgresql = "0.8.13.RELEASE";
 }
