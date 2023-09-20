@@ -20,7 +20,11 @@ include 'hw13_di:homework'
 
 include 'hw14-springDataJdbc'
 
+
 include 'hw16-queue'
 
 include 'hw17-grpc:client'
 include 'hw17-grpc:server'
+
+include 'hw18-webflux:client-service'
+include 'hw18-webflux:datastore-service'
